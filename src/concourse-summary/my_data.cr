@@ -35,7 +35,8 @@ class MyData
   end
 
   def self.get_data(host, username, password, pipelines = nil)
-    client = HTTP::Client.new(host, tls: true)
+    split = host.split(':')
+    client = HTTP::Client.new(split.shift, port = split.shift?, tls: true)
     client.basic_auth(username, password)
 
     Pipeline.all(client).map do |pipeline|
