@@ -105,4 +105,5 @@ get "/" do |env|
 end
 
 Kemal.config.add_handler ExposeUnauthorizedHandler.new
+Kemal.config.port = 80
 Kemal.run
