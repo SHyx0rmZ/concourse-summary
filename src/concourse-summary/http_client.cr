@@ -18,7 +18,8 @@ class HttpClient
     else
       context = true
     end
-    @client = HTTP::Client.new(host, tls: context)
+    split = host.split(':')
+    @client = HTTP::Client.new(split.shift, port = split.shift?)
 
     if username.to_s.size > 0
       if login_form

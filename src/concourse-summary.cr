@@ -88,8 +88,9 @@ get "/group/:key" do |env|
   hosts = hosts.map do |host, pipelines|
     data = MyData.get_data(host, username, password, pipelines)
     data = MyData.filter_groups(data, pipelines)
+    split = host.split(':')
     statuses = process(data, ignore_groups)
-    { host, statuses }
+    { split.shift, statuses }
   end
 
   json_or_html(hosts, "group")
