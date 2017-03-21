@@ -10,6 +10,8 @@ var scaleboxes = function() {
   var w = Math.floor(Math.sqrt(y)) - 4;
   var h = w * 2 / 3;
   var h = Math.floor(w * 2 / 3);
+	w = 300;
+	h = 200;
 
   // Correct if too long
   var perColumn = Math.floor(window.innerWidth / (w + 4));
@@ -64,7 +66,7 @@ var onsuccess = function(request) {
   }
   document.body.innerHTML=doc.body.innerHTML;
 
-  scaleboxes()
+  //scaleboxes()
 };
 setInterval(function() {
   var request = new XMLHttpRequest();
@@ -87,5 +89,5 @@ setInterval(function() {
   }
 }, 1000);
 
-window.addEventListener("load", function() { scaleboxes() });
-window.addEventListener("resize", function() { scaleboxes() });
+//window.addEventListener("load", function() { scaleboxes() });
+//window.addEventListener("resize", function() { scaleboxes() });
