@@ -32,6 +32,8 @@ def setup(env)
     collapso_toggle = collapso_toggle + ["ignore_groups"]
   end
 
+  env.response.content_type = "text/html; charset=utf-8"
+
   {refresh_interval,username,password,ignore_groups,collapso_toggle,login_form,team_name}
 end
 
